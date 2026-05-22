@@ -12,7 +12,7 @@ export function Hero() {
     ? phoneDigits
     : `55${phoneDigits}`;
   const whatsappHref = `https://wa.me/${normalizedPhone}`;
-  const resumeHref = "/CurriculoDanillo.pdf";
+  const resumeHref = "/Curriculo-Danillo-Coelho-Backend-Java.pdf";
 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 pb-20 pt-32 sm:pt-36">
