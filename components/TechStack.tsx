@@ -7,8 +7,8 @@ export function TechStack() {
     <Section id="tecnologias">
       <SectionHeading
         eyebrow="Tecnologias"
-        title="Stack organizada por contexto de atuacao."
-        description="Ferramentas e conhecimentos aplicados em projetos backend e integracoes, sem perder versatilidade em frontend e mobile."
+        title="Stack organizada por contexto de atuação."
+        description="Ferramentas e conhecimentos aplicados em projetos backend e integrações, sem perder versatilidade em frontend e mobile."
       />
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

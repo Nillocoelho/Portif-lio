@@ -1,7 +1,8 @@
-import { Mail, Phone, SquareArrowOutUpRight } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { profile } from "@/data/profile";
 import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
+import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
 export function Contact() {
   const phoneDigits = profile.phone.replace(/\D/g, "");
@@ -13,10 +14,13 @@ export function Contact() {
         <SectionHeading
           eyebrow="Contato"
           title="Vamos conversar sobre backend, APIs e novas oportunidades."
-          description="Disponivel para atuar com desenvolvimento backend Java, manutencao de sistemas e integracao de servicos."
+          description="Disponível para atuar com desenvolvimento backend Java, manutenção de sistemas e integração de serviços."
         />
 
-        <p className="mt-4 text-sm text-zinc-400">Localizacao: {profile.location}</p>
+        <p className="mt-4 text-sm text-zinc-400">Localização: {profile.location}</p>
+        <p className="mt-2 text-sm text-zinc-500">
+          Resposta geralmente em até 24 horas.
+        </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -43,7 +47,7 @@ export function Contact() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-300 transition hover:border-cyan-300/60 hover:text-white"
           >
-            <SquareArrowOutUpRight size={15} />
+            <GitHubIcon className="h-[15px] w-[15px]" />
             GitHub
           </a>
 
@@ -53,7 +57,7 @@ export function Contact() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-300 transition hover:border-cyan-300/60 hover:text-white"
           >
-            <SquareArrowOutUpRight size={15} />
+            <LinkedInIcon className="h-[15px] w-[15px]" />
             LinkedIn
           </a>
         </div>

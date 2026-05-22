@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Mail, PhoneCall, SquareArrowOutUpRight } from "lucide-react";
+import { ArrowRight, Mail, PhoneCall } from "lucide-react";
 import { profile } from "@/data/profile";
+import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
 export function Hero() {
   const phoneDigits = profile.phone.replace(/\D/g, "");
@@ -21,13 +22,22 @@ export function Hero() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="order-2 text-center lg:order-1 lg:text-left"
           >
+            <motion.span
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              className="inline-flex rounded-full border border-cyan-300/35 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200"
+            >
+              {profile.availability}
+            </motion.span>
+
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="text-xs uppercase tracking-[0.28em] text-zinc-400"
+              className="mt-4 text-xs uppercase tracking-[0.28em] text-zinc-400"
             >
-              Portfolio Profissional
+              Portfólio Profissional
             </motion.p>
 
             <motion.h1
@@ -83,7 +93,7 @@ export function Hero() {
                 href="#experiencia"
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900"
               >
-                Minha experiencia
+                Minha experiência
               </a>
             </motion.div>
 
@@ -99,7 +109,7 @@ export function Hero() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
               >
-                <SquareArrowOutUpRight size={16} />
+                <GitHubIcon className="h-4 w-4" />
                 GitHub
               </a>
 
@@ -109,7 +119,7 @@ export function Hero() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
               >
-                <SquareArrowOutUpRight size={16} />
+                <LinkedInIcon className="h-4 w-4" />
                 LinkedIn
               </a>
 
@@ -128,6 +138,27 @@ export function Hero() {
                 <PhoneCall size={16} />
                 {profile.phone}
               </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.56 }}
+              className="mt-8 grid gap-3 sm:grid-cols-3"
+            >
+              {profile.highlights.map((highlight) => (
+                <div
+                  key={highlight.label}
+                  className="rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-left"
+                >
+                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">
+                    {highlight.label}
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-zinc-200">
+                    {highlight.value}
+                  </p>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
 

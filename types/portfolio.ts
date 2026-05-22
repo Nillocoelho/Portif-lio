@@ -5,11 +5,14 @@ export type TechnologyCategory = {
 
 export type ProjectItem = {
   title: string;
+  subtitle: string;
   description: string;
   highlights: string[];
-  stack: string[];
+  techs: string[];
   github: string;
-  demo?: string;
+  demo?: string | null;
+  category: string;
+  featured: boolean;
 };
 
 export type ExperienceItem = {
@@ -20,10 +23,21 @@ export type ExperienceItem = {
   highlights: string[];
 };
 
+export type HighlightItem = {
+  label: string;
+  value: string;
+};
+
+export type WorkflowItem = {
+  title: string;
+  description: string;
+};
+
 export type Profile = {
   name: string;
   role: string;
   heroStack: string;
+  availability: string;
   email: string;
   phone: string;
   github: string;
@@ -31,6 +45,9 @@ export type Profile = {
   location: string;
   bio: string;
   about: string;
+  focusAreas: string[];
+  highlights: HighlightItem[];
+  workflow: WorkflowItem[];
   technologies: TechnologyCategory[];
   projects: ProjectItem[];
   experiences: ExperienceItem[];

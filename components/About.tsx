@@ -7,20 +7,15 @@ export function About() {
     <Section id="sobre">
       <SectionHeading
         eyebrow="Sobre"
-        title="Backend orientado a qualidade, integracao e clareza tecnica."
+        title="Backend orientado a qualidade, integração e clareza técnica."
         description={profile.about}
       />
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        {[
-          "Desenvolvimento e manutencao de APIs REST para sistemas corporativos.",
-          "Modelagem e consultas SQL com foco em consistencia e performance.",
-          "Integracao de servicos e sincronizacao de dados entre plataformas.",
-          "Clean Code, arquitetura em camadas e colaboracao em times ageis.",
-        ].map((item) => (
+        {profile.focusAreas.map((item) => (
           <div
             key={item}
-            className="rounded-2xl border border-zinc-800 bg-zinc-950/70 px-5 py-4 text-sm text-zinc-300"
+            className="rounded-2xl border border-zinc-800 bg-zinc-950/70 px-5 py-4 text-sm text-zinc-300 transition hover:border-cyan-300/30 hover:bg-zinc-900/80"
           >
             {item}
           </div>
