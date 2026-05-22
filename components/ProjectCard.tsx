@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import { BadgeCheck, BookOpen, Code2, ExternalLink, FileText } from "lucide-react";
@@ -22,6 +22,9 @@ function actionClassName() {
 }
 
 export function ProjectCard({ project, index, isPrimary = false }: ProjectCardProps) {
+  const hasRoadmapSections =
+    Boolean(project.implementedHighlights?.length) || Boolean(project.nextSteps?.length);
+
   const actions: ProjectAction[] = [
     { href: project.github, icon: Code2, label: "Ver código" },
     { href: project.readme, icon: BookOpen, label: "Ver README" },
@@ -62,7 +65,6 @@ export function ProjectCard({ project, index, isPrimary = false }: ProjectCardPr
           <span className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-semibold text-zinc-300">
             {project.category}
           </span>
-
         </div>
 
         <h3 className="mt-4 text-2xl font-semibold tracking-tight text-zinc-100">
@@ -72,24 +74,94 @@ export function ProjectCard({ project, index, isPrimary = false }: ProjectCardPr
 
         <p className="mt-5 text-base leading-7 text-zinc-300">{project.description}</p>
 
-        <ul className="mt-5 space-y-2">
-          {project.highlights.map((highlight) => (
-            <li key={highlight} className="text-sm text-zinc-400">
-              - {highlight}
-            </li>
-          ))}
-        </ul>
+        {hasRoadmapSections ? (
+          <div className="mt-6 space-y-5">
+            {project.implementedHighlights?.length ? (
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-300">
+                  Implementado / em andamento
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {project.implementedHighlights.map((item) => (
+                    <li key={item} className="text-sm text-zinc-400">
+                      - {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.techs.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-1 text-xs font-medium text-zinc-200"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+            {project.nextSteps?.length ? (
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-300">
+                  Próximos passos
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {project.nextSteps.map((item) => (
+                    <li key={item} className="text-sm text-zinc-400">
+                      - {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        ) : (
+          <ul className="mt-5 space-y-2">
+            {project.highlights.map((highlight) => (
+              <li key={highlight} className="text-sm text-zinc-400">
+                - {highlight}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {project.plannedTechs?.length ? (
+          <div className="mt-6 space-y-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-300">
+                Tecnologias atuais
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {project.techs.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-1 text-xs font-medium text-zinc-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                Planejado
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {project.plannedTechs.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-dashed border-zinc-700 bg-zinc-900/40 px-3 py-1 text-xs font-medium text-zinc-400"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="mt-6 flex flex-wrap gap-2">
+            {project.techs.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-1 text-xs font-medium text-zinc-200"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
 
         <div className="mt-7 flex flex-wrap gap-3 text-sm">
           {availableActions.map((action) => {

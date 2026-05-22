@@ -8,7 +8,10 @@ export type ProjectItem = {
   subtitle: string;
   description: string;
   highlights: string[];
+  implementedHighlights?: string[];
+  nextSteps?: string[];
   techs: string[];
+  plannedTechs?: string[];
   github?: string | null;
   readme?: string | null;
   apiDocs?: string | null;
