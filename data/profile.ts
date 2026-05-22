@@ -12,7 +12,7 @@ export const profile: Profile = {
   location: "Paraíba, Brasil",
   bio: "Desenvolvedor Backend Java Jr. focado na construção de APIs REST, integração de sistemas e manutenção de aplicações corporativas. Tenho experiência com desenvolvimento de software, arquitetura em camadas, modelagem de dados e colaboração em times ágeis.",
   about:
-    "Atuo no desenvolvimento e manutenção de serviços backend, com foco em regras de negócio, integração entre sistemas e qualidade de código. Busco entregar soluções estáveis, com boa documentação técnica, testes e estrutura preparada para evolução contínua.",
+    "Atuo no desenvolvimento e manutenção de sistemas corporativos e estou direcionando minha carreira para backend Java, com foco em APIs REST, regras de negócio, integração entre sistemas, arquitetura em camadas e qualidade de código.",
   focusAreas: [
     "Construção de APIs REST com Java e Spring Boot.",
     "Modelagem relacional e consultas SQL em PostgreSQL.",
@@ -97,11 +97,11 @@ export const profile: Profile = {
       title: "API de Controle Financeiro",
       subtitle: "Projeto backend Java/Spring Boot (em desenvolvimento).",
       description:
-        "API REST em desenvolvimento para controle financeiro pessoal, construída com Java e Spring Boot, com foco em arquitetura em camadas, persistência com PostgreSQL, validações de regras de negócio, documentação da API e testes automatizados.",
+        "API REST em desenvolvimento para controle financeiro pessoal, construída com Java e Spring Boot, com foco em arquitetura em camadas, persistência com PostgreSQL e evolução planejada para autenticação, documentação da API e testes automatizados.",
       highlights: [],
       implementedHighlights: [
-        "Estrutura inicial do projeto Spring Boot.",
-        "Organização em camadas: controller, service, repository e DTOs.",
+        "Estrutura inicial em Spring Boot.",
+        "Organização em camadas com controllers, services, repositories e DTOs.",
         "Modelagem das entidades principais.",
         "Persistência com Spring Data JPA e PostgreSQL.",
         "Endpoints iniciais para receitas e despesas.",

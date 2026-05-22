@@ -25,8 +25,13 @@ export function ProjectCard({ project, index, isPrimary = false }: ProjectCardPr
   const hasRoadmapSections =
     Boolean(project.implementedHighlights?.length) || Boolean(project.nextSteps?.length);
 
+  const codeActionLabel =
+    project.title === "API de Controle Financeiro"
+      ? "Ver progresso no GitHub"
+      : "Ver código";
+
   const actions: ProjectAction[] = [
-    { href: project.github, icon: Code2, label: "Ver código" },
+    { href: project.github, icon: Code2, label: codeActionLabel },
     { href: project.readme, icon: BookOpen, label: "Ver README" },
     { href: project.apiDocs, icon: FileText, label: "Documentação da API" },
     { href: project.demo, icon: ExternalLink, label: "Ver demo" },
