@@ -10,11 +10,11 @@ export const profile: Profile = {
   github: "https://github.com/Nillocoelho",
   linkedin: "https://www.linkedin.com/in/nillocoelho/",
   location: "Paraíba, Brasil",
-  bio: "Desenvolvedor Backend Java Jr. focado na construção de APIs REST, integração de sistemas e manutenção de aplicações corporativas. Tenho experiência com desenvolvimento de software, arquitetura em camadas, modelagem de dados e colaboração em times ágeis.",
+  bio: "Desenvolvedor de software direcionando sua carreira para Backend Java Jr., com foco na construção de APIs REST, integração de sistemas e manutenção de aplicações corporativas. Tenho experiência com desenvolvimento de software, arquitetura em camadas, modelagem de dados e colaboração em times ágeis.",
   about:
     "Atuo no desenvolvimento e manutenção de sistemas corporativos e estou direcionando minha carreira para backend Java, com foco em APIs REST, regras de negócio, integração entre sistemas, arquitetura em camadas e qualidade de código.",
   focusAreas: [
-    "Construção de APIs REST com Java e Spring Boot.",
+    "Desenvolvimento de APIs REST com Java e Spring Boot em projetos próprios.",
     "Modelagem relacional e consultas SQL em PostgreSQL.",
     "Arquitetura em camadas com separação de responsabilidades.",
     "Integração de sistemas e manutenção evolutiva.",

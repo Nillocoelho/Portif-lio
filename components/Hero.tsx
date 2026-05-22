@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Mail, PhoneCall } from "lucide-react";
+import { ArrowRight, Download, Mail, PhoneCall } from "lucide-react";
 import { profile } from "@/data/profile";
 import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
@@ -12,6 +12,7 @@ export function Hero() {
     ? phoneDigits
     : `55${phoneDigits}`;
   const whatsappHref = `https://wa.me/${normalizedPhone}`;
+  const resumeHref = "/CurriculoDanillo.pdf";
 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 pb-20 pt-32 sm:pt-36">
@@ -97,6 +98,15 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900"
               >
                 Minha experiência
+              </a>
+
+              <a
+                href={resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900"
+              >
+                Baixar currículo <Download size={16} />
               </a>
             </motion.div>
 
