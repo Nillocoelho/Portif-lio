@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Danillo Coelho | Portfólio",
+  title: "Danillo Coelho Barbosa | Desenvolvedor Backend Java Jr.",
   description:
-    "Portfólio de Danillo Coelho, desenvolvedor front-end focado em Next.js, React, TypeScript e Tailwind CSS.",
-};
+    "Portfolio profissional de Danillo Coelho Barbosa, Desenvolvedor Backend Java Jr. com foco em Java, Spring Boot, APIs REST, PostgreSQL e integracao de sistemas.",
+} satisfies Metadata;
 
 export default function RootLayout({
   children,
@@ -28,7 +28,9 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full bg-zinc-950 font-sans text-zinc-100">
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,9 +1,13 @@
+import { profile } from "@/data/profile";
+
 export function Footer() {
   return (
-    <footer className="mx-auto max-w-5xl px-6 py-10 text-sm text-zinc-500">
-      <div className="border-t border-zinc-900 pt-8">
-        © {new Date().getFullYear()} Danillo Coelho. Todos os direitos
-        reservados.
+    <footer className="mx-auto w-full max-w-6xl px-6 pb-10 pt-6 text-sm text-zinc-500">
+      <div className="border-t border-zinc-800 pt-6">
+        <p>
+          (c) {new Date().getFullYear()} {profile.name}. Desenvolvedor Backend
+          Java Jr.
+        </p>
       </div>
     </footer>
   );

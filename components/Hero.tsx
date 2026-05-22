@@ -1,92 +1,159 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Mail, SquareArrowOutUpRight } from "lucide-react";
+import { ArrowRight, Mail, PhoneCall, SquareArrowOutUpRight } from "lucide-react";
 import { profile } from "@/data/profile";
 
 export function Hero() {
+  const phoneDigits = profile.phone.replace(/\D/g, "");
+  const phoneHref = `tel:+55${phoneDigits}`;
+
   return (
-    <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center overflow-hidden px-6 py-24">
-      <div className="absolute left-1/2 top-1/4 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
+    <section className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 pb-20 pt-32 sm:pt-36">
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[500px] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_62%)]" />
 
-      <motion.p
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-4 text-sm uppercase tracking-[0.3em] text-zinc-400"
-      >
-        Portfólio
-      </motion.p>
+      <div className="w-full rounded-3xl border border-zinc-800/70 bg-zinc-950/60 p-8 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-12">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="order-2 text-center lg:order-1 lg:text-left"
+          >
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              className="text-xs uppercase tracking-[0.28em] text-zinc-400"
+            >
+              Portfolio Profissional
+            </motion.p>
 
-      <motion.h1
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="max-w-3xl text-5xl font-bold tracking-tight sm:text-7xl"
-      >
-        Olá, eu sou {profile.name}.
-      </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.08 }}
+              className="mt-4 text-4xl font-semibold tracking-tight text-zinc-100 sm:text-6xl"
+            >
+              {profile.name}
+            </motion.h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400"
-      >
-        {profile.bio}
-      </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.16 }}
+              className="mt-4 text-lg font-medium text-cyan-300 sm:text-xl"
+            >
+              {profile.role}
+            </motion.p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-10 flex flex-wrap gap-4"
-      >
-        <a
-          href="#projetos"
-          className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-zinc-200"
-        >
-          Ver projetos <ArrowRight size={18} />
-        </a>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.24 }}
+              className="mt-2 text-sm uppercase tracking-[0.22em] text-zinc-400"
+            >
+              {profile.heroStack}
+            </motion.p>
 
-        <a
-          href="#contato"
-          className="rounded-full border border-zinc-700 px-6 py-3 font-medium text-white transition hover:bg-zinc-900"
-        >
-          Entrar em contato
-        </a>
-      </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.32 }}
+              className="mt-6 max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg"
+            >
+              {profile.bio}
+            </motion.p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="mt-10 flex gap-5 text-zinc-400"
-      >
-        <a
-          href={profile.github}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub"
-          className="hover:text-white"
-        >
-          <SquareArrowOutUpRight />
-        </a>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.4 }}
+              className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start"
+            >
+              <a
+                href="#projetos"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-cyan-200"
+              >
+                Ver projetos <ArrowRight size={17} />
+              </a>
 
-        <a
-          href={profile.linkedin}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn"
-          className="hover:text-white"
-        >
-          <SquareArrowOutUpRight />
-        </a>
+              <a
+                href="#experiencia"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900"
+              >
+                Minha experiencia
+              </a>
+            </motion.div>
 
-        <a href={`mailto:${profile.email}`} className="hover:text-white">
-          <Mail />
-        </a>
-      </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.48 }}
+              className="mt-8 flex flex-wrap justify-center gap-3 text-sm lg:justify-start"
+            >
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+              >
+                <SquareArrowOutUpRight size={16} />
+                GitHub
+              </a>
+
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+              >
+                <SquareArrowOutUpRight size={16} />
+                LinkedIn
+              </a>
+
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+              >
+                <Mail size={16} />
+                Email
+              </a>
+
+              <a
+                href={phoneHref}
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+              >
+                <PhoneCall size={16} />
+                {profile.phone}
+              </a>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.2 }}
+            className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none"
+          >
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-xs sm:max-w-sm lg:max-w-[360px]">
+              <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-cyan-400/18 blur-3xl" />
+
+              <div className="relative h-full w-full overflow-hidden rounded-3xl border border-zinc-800 shadow-2xl transition duration-300 hover:-translate-y-1 hover:scale-[1.01]">
+                <Image
+                  src="/foto.jpg"
+                  alt="Foto de Danillo Coelho"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 78vw, (max-width: 1024px) 52vw, 360px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
