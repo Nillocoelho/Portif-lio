@@ -9,7 +9,9 @@ export type ProjectItem = {
   description: string;
   highlights: string[];
   techs: string[];
-  github: string;
+  github?: string | null;
+  readme?: string | null;
+  apiDocs?: string | null;
   demo?: string | null;
   category: string;
   featured: boolean;

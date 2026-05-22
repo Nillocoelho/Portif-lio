@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { BadgeCheck, Code2, ExternalLink } from "lucide-react";
+import { BadgeCheck, BookOpen, Code2, ExternalLink, FileText } from "lucide-react";
 import type { ProjectItem } from "@/types/portfolio";
+import type { ComponentType } from "react";
 
 type ProjectCardProps = {
   project: ProjectItem;
@@ -10,7 +11,26 @@ type ProjectCardProps = {
   isPrimary?: boolean;
 };
 
+type ProjectAction = {
+  href?: string | null;
+  icon: ComponentType<{ size?: number }>;
+  label: string;
+};
+
+function actionClassName() {
+  return "inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/50 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950";
+}
+
 export function ProjectCard({ project, index, isPrimary = false }: ProjectCardProps) {
+  const actions: ProjectAction[] = [
+    { href: project.github, icon: Code2, label: "Ver código" },
+    { href: project.readme, icon: BookOpen, label: "Ver README" },
+    { href: project.apiDocs, icon: FileText, label: "Documentação da API" },
+    { href: project.demo, icon: ExternalLink, label: "Ver demo" },
+  ];
+
+  const availableActions = actions.filter((action) => Boolean(action.href));
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -21,7 +41,9 @@ export function ProjectCard({ project, index, isPrimary = false }: ProjectCardPr
       className={`rounded-3xl border border-zinc-800 bg-zinc-950 p-7 shadow-lg shadow-black/20 transition ${
         isPrimary
           ? "relative overflow-hidden border-cyan-300/35 xl:col-span-2"
-          : "hover:border-zinc-700"
+          : project.featured
+            ? "border-zinc-700/90"
+            : "hover:border-zinc-700"
       }`}
     >
       {isPrimary ? (
@@ -37,17 +59,10 @@ export function ProjectCard({ project, index, isPrimary = false }: ProjectCardPr
             </span>
           ) : null}
 
-          {project.category === "Full Stack" ? (
-            <span className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-semibold text-zinc-200">
-              Full Stack
-            </span>
-          ) : null}
+          <span className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-semibold text-zinc-300">
+            {project.category}
+          </span>
 
-          {!isPrimary && project.category !== "Full Stack" ? (
-            <span className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-semibold text-zinc-300">
-              {project.category}
-            </span>
-          ) : null}
         </div>
 
         <h3 className="mt-4 text-2xl font-semibold tracking-tight text-zinc-100">
@@ -77,26 +92,27 @@ export function ProjectCard({ project, index, isPrimary = false }: ProjectCardPr
         </div>
 
         <div className="mt-7 flex flex-wrap gap-3 text-sm">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
-          >
-            <Code2 size={16} />
-            Ver código
-          </a>
+          {availableActions.map((action) => {
+            const Icon = action.icon;
 
-          {project.demo ? (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
-            >
-              <ExternalLink size={16} />
-              Ver detalhes
-            </a>
+            return (
+              <a
+                key={action.label}
+                href={action.href ?? undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={actionClassName()}
+              >
+                <Icon size={16} />
+                {action.label}
+              </a>
+            );
+          })}
+
+          {availableActions.length === 0 ? (
+            <span className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-medium text-zinc-300">
+              Em desenvolvimento
+            </span>
           ) : null}
         </div>
       </div>

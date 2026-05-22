@@ -6,7 +6,10 @@ import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
 export function Contact() {
   const phoneDigits = profile.phone.replace(/\D/g, "");
-  const phoneHref = `tel:+55${phoneDigits}`;
+  const normalizedPhone = phoneDigits.startsWith("55")
+    ? phoneDigits
+    : `55${phoneDigits}`;
+  const whatsappHref = `https://wa.me/${normalizedPhone}`;
 
   return (
     <Section id="contato" className="pb-16">
@@ -32,7 +35,9 @@ export function Contact() {
           </a>
 
           <a
-            href={phoneHref}
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900"
           >
             <Phone size={16} />
@@ -44,7 +49,7 @@ export function Contact() {
           <a
             href={profile.github}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-300 transition hover:border-cyan-300/60 hover:text-white"
           >
             <GitHubIcon className="h-[15px] w-[15px]" />
@@ -54,7 +59,7 @@ export function Contact() {
           <a
             href={profile.linkedin}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-300 transition hover:border-cyan-300/60 hover:text-white"
           >
             <LinkedInIcon className="h-[15px] w-[15px]" />

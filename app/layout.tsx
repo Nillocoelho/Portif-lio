@@ -15,15 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Danillo Coelho Barbosa | Desenvolvedor Backend Java Jr.",
   description:
-    "Portfólio profissional de Danillo Coelho Barbosa, Desenvolvedor Backend Java Jr. com foco em Java, Spring Boot, APIs REST, PostgreSQL e integração de sistemas.",
+    "Desenvolvedor Backend Java Jr. focado na construção de APIs REST, integração de sistemas e manutenção de aplicações corporativas com Java, Spring Boot e PostgreSQL.",
   keywords: [
     "Desenvolvedor Backend Java Jr",
     "Java",
     "Spring Boot",
     "APIs REST",
     "PostgreSQL",
-    "Integracao de Sistemas",
-    "Portfolio Backend",
+    "Integração de Sistemas",
+    "Portfólio Backend",
   ],
   openGraph: {
     title: "Danillo Coelho Barbosa | Desenvolvedor Backend Java Jr.",

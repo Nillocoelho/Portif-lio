@@ -4,8 +4,8 @@ import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 
 function getProjectPriority(title: string): number {
-  if (title === "FinanTech") return 0;
-  if (title === "IFteca_RAD") return 1;
+  if (title === "API de Controle Financeiro") return 0;
+  if (title === "FinanTech") return 1;
   return 2;
 }
 
@@ -21,7 +21,7 @@ export function Projects() {
       <SectionHeading
         eyebrow="Projetos"
         title="Projetos em destaque"
-        description="Cases técnicos construídos para resolver problemas reais, combinando mobile, backend, arquitetura de software e dados."
+        description="Projetos construídos para resolver problemas reais, com foco em backend, arquitetura, dados e qualidade técnica."
       />
 
       <div className="mt-10 grid gap-6 xl:grid-cols-3">
@@ -30,7 +30,7 @@ export function Projects() {
             key={project.title}
             project={project}
             index={index}
-            isPrimary={index === 0 && project.title === "FinanTech"}
+            isPrimary={index === 0 && project.title === "API de Controle Financeiro"}
           />
         ))}
       </div>

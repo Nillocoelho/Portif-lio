@@ -8,7 +8,10 @@ import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
 export function Hero() {
   const phoneDigits = profile.phone.replace(/\D/g, "");
-  const phoneHref = `tel:+55${phoneDigits}`;
+  const normalizedPhone = phoneDigits.startsWith("55")
+    ? phoneDigits
+    : `55${phoneDigits}`;
+  const whatsappHref = `https://wa.me/${normalizedPhone}`;
 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 pb-20 pt-32 sm:pt-36">
@@ -106,7 +109,7 @@ export function Hero() {
               <a
                 href={profile.github}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
               >
                 <GitHubIcon className="h-4 w-4" />
@@ -116,7 +119,7 @@ export function Hero() {
               <a
                 href={profile.linkedin}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
               >
                 <LinkedInIcon className="h-4 w-4" />
@@ -132,7 +135,9 @@ export function Hero() {
               </a>
 
               <a
-                href={phoneHref}
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
               >
                 <PhoneCall size={16} />
