@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Danillo Coelho Barbosa | Desenvolvedor Backend Java Jr.",
+  title: "Danillo Coelho Barbosa | Desenvolvedor Full Stack Pleno I",
   description:
-    "Desenvolvedor Backend Java Jr. focado na construção de APIs REST, integração de sistemas e manutenção de aplicações corporativas com Java, Spring Boot e PostgreSQL.",
+    "Desenvolvedor Full Stack Pleno I focado na construção de APIs REST, integração de sistemas e manutenção de aplicações corporativas com Java, Spring Boot e PostgreSQL.",
   keywords: [
-    "Desenvolvedor Backend Java Jr",
+    "Desenvolvedor Full Stack Pleno I",
     "Java",
     "Spring Boot",
     "APIs REST",
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     "Portfólio Backend",
   ],
   openGraph: {
-    title: "Danillo Coelho Barbosa | Desenvolvedor Backend Java Jr.",
+    title: "Danillo Coelho Barbosa | Desenvolvedor Full Stack Pleno I",
     description:
-      "Portfólio backend com foco em Java, Spring Boot, APIs REST, PostgreSQL e arquitetura em camadas.",
+      "Portfólio Full Stack com foco em aplicações web, APIs REST, automações e integrações.",
     type: "website",
     locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Danillo Coelho Barbosa | Desenvolvedor Backend Java Jr.",
+    title: "Danillo Coelho Barbosa | Desenvolvedor Full Stack Pleno I",
     description:
-      "Backend Java Jr focado em APIs REST, integrações de sistemas e qualidade de software.",
+      "Full Stack Pleno I focado em APIs REST, integrações de sistemas e qualidade de software.",
   },
 };
 
