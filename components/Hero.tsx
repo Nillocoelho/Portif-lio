@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Download, Mail, PhoneCall } from "lucide-react";
+import { ArrowRight, Mail, PhoneCall } from "lucide-react";
 import { profile } from "@/data/profile";
 import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
@@ -12,7 +12,7 @@ export function Hero() {
     ? phoneDigits
     : `55${phoneDigits}`;
   const whatsappHref = `https://wa.me/${normalizedPhone}`;
-  const resumeHref = "/Curriculo-Danillo-Coelho-Backend-Java.pdf";
+
 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 pb-20 pt-32 sm:pt-36">
@@ -30,7 +30,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="inline-flex rounded-full border border-cyan-300/35 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200"
+              className="inline-flex rounded-full border border-emerald-300/35 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200"
             >
               {profile.availability}
             </motion.span>
@@ -41,7 +41,7 @@ export function Hero() {
               transition={{ duration: 0.45 }}
               className="mt-4 text-xs uppercase tracking-[0.28em] text-zinc-400"
             >
-              Portfólio Profissional
+              Desenvolvimento Full Stack · Engenharia de Software
             </motion.p>
 
             <motion.h1
@@ -57,7 +57,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.16 }}
-              className="mt-4 text-lg font-medium text-cyan-300 sm:text-xl"
+              className="mt-4 text-lg font-medium text-emerald-300 sm:text-xl"
             >
               {profile.role}
             </motion.p>
@@ -88,7 +88,7 @@ export function Hero() {
             >
               <a
                 href="#projetos"
-                className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-cyan-200"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-300 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-200"
               >
                 Ver projetos <ArrowRight size={17} />
               </a>
@@ -100,14 +100,7 @@ export function Hero() {
                 Minha experiência
               </a>
 
-              <a
-                href={resumeHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900"
-              >
-                Baixar currículo <Download size={16} />
-              </a>
+
             </motion.div>
 
             <motion.div
@@ -120,7 +113,7 @@ export function Hero() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-emerald-300/60 hover:text-white"
               >
                 <GitHubIcon className="h-4 w-4" />
                 GitHub
@@ -130,7 +123,7 @@ export function Hero() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-emerald-300/60 hover:text-white"
               >
                 <LinkedInIcon className="h-4 w-4" />
                 LinkedIn
@@ -138,7 +131,7 @@ export function Hero() {
 
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-emerald-300/60 hover:text-white"
               >
                 <Mail size={16} />
                 Email
@@ -148,7 +141,7 @@ export function Hero() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/60 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-zinc-200 transition hover:border-emerald-300/60 hover:text-white"
               >
                 <PhoneCall size={16} />
                 {profile.phone}
@@ -184,7 +177,7 @@ export function Hero() {
             className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none"
           >
             <div className="relative mx-auto aspect-[4/5] w-full max-w-xs sm:max-w-sm lg:max-w-[360px]">
-              <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-cyan-400/18 blur-3xl" />
+              <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-emerald-400/18 blur-3xl" />
 
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-zinc-800 shadow-2xl transition duration-300 hover:-translate-y-1 hover:scale-[1.01]">
                 <Image
