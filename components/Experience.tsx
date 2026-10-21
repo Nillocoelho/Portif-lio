@@ -15,9 +15,9 @@ export function Experience() {
         {profile.experiences.map((experience) => (
           <article
             key={`${experience.company}-${experience.role}`}
-            className="relative rounded-3xl border border-zinc-800 bg-gradient-to-br from-zinc-950 to-zinc-900/60 p-6 transition hover:border-cyan-300/35 lg:ml-10"
+            className="relative rounded-3xl border border-zinc-800 bg-gradient-to-br from-zinc-950 to-zinc-900/60 p-6 transition hover:border-emerald-300/35 lg:ml-10"
           >
-            <span className="absolute -left-[2.85rem] top-8 hidden h-4 w-4 rounded-full border border-cyan-300/35 bg-zinc-950 lg:block" />
+            <span className="absolute -left-[2.85rem] top-8 hidden h-4 w-4 rounded-full border border-emerald-300/35 bg-zinc-950 lg:block" />
 
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h3 className="text-xl font-semibold text-zinc-100">
