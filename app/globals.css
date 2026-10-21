@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090b10;
+  --background: #080d0b;
   --foreground: #f4f4f5;
 }
 
@@ -25,11 +25,14 @@ body {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #67e8f9;
+  outline: 2px solid #6ee7b7;
   outline-offset: 2px;
 }
 
 ::selection {
-  background: #67e8f9;
-  color: #082f49;
+  background: #6ee7b7;
+  color: #052e21;
 }
+
+body { background-image: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(16,185,129,.09), transparent 70%); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
