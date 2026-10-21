@@ -2,25 +2,24 @@ import type { Profile } from "@/types/portfolio";
 
 export const profile: Profile = {
   name: "Danillo Coelho Barbosa",
-  role: "Desenvolvedor Backend Java Jr.",
-  heroStack: "Java | Spring Boot | APIs REST | PostgreSQL",
-  availability: "Disponível para oportunidades backend Java",
+  role: "Desenvolvedor Full Stack Pleno I",
+  heroStack: "React | TypeScript | Java | Python | PostgreSQL",
+  availability: "Full Stack Pleno I na WayHub",
   email: "nillocoelho@gmail.com",
   phone: "+55 83 99830-6184",
   github: "https://github.com/Nillocoelho",
   linkedin: "https://www.linkedin.com/in/nillocoelho/",
   location: "Paraíba, Brasil",
-  bio: "Desenvolvedor de software direcionando sua carreira para Backend Java Jr., com foco na construção de APIs REST, integração de sistemas e manutenção de aplicações corporativas. Tenho experiência com desenvolvimento de software, arquitetura em camadas, modelagem de dados e colaboração em times ágeis.",
-  about:
-    "Atuo no desenvolvimento e manutenção de sistemas corporativos e estou direcionando minha carreira para backend Java, com foco em APIs REST, regras de negócio, integração entre sistemas, arquitetura em camadas e qualidade de código.",
+  bio: "Desenvolvedor Full Stack Pleno I na WayHub, com experiência em aplicações web, APIs REST, integrações, automações e bancos de dados. Atuo do frontend à infraestrutura, mantendo uma base sólida em backend.",
+  about: "Graduado em Sistemas para Internet pelo IFPB e pós-graduando em Análise e Processamento de Dados pelo IFMG. Atualmente desenvolvo soluções digitais na WayHub com React, TypeScript, Supabase, PostgreSQL e integrações. Tenho experiência anterior com Django, Flutter e aplicações corporativas.",
   focusAreas: [
-    "Desenvolvimento de APIs REST com Java e Spring Boot em projetos próprios.",
+    "Aplicações Full Stack com React, TypeScript e Supabase.",
     "Modelagem relacional e consultas SQL em PostgreSQL.",
     "Arquitetura em camadas com separação de responsabilidades.",
     "Integração de sistemas e manutenção evolutiva.",
   ],
   highlights: [
-    { label: "Posicionamento", value: "Backend Java Jr." },
+    { label: "Posicionamento", value: "Full Stack Pleno I" },
     { label: "Especialidade", value: "APIs REST" },
     { label: "Banco de dados", value: "PostgreSQL" },
   ],
@@ -89,7 +88,7 @@ export const profile: Profile = {
     },
     {
       title: "Frontend/Mobile",
-      items: ["Angular", "TypeScript", "JavaScript", "Flutter", "Dart"],
+      items: ["React", "Next.js", "Angular", "TypeScript", "JavaScript", "Flutter", "Dart", "Supabase"],
     },
   ],
   projects: [
@@ -160,9 +159,16 @@ export const profile: Profile = {
   ],
   experiences: [
     {
+      company: "WayHub",
+      role: "Desenvolvedor Full Stack Pleno I",
+      period: "2026 — Atual",
+      summary: "Desenvolvimento e evolução de aplicações web, automações e integrações com serviços externos, com atuação em frontend, backend e infraestrutura.",
+      highlights: ["React e TypeScript em aplicações web.", "Integrações de APIs e automações.", "PostgreSQL e Supabase.", "Docker, Linux e deploy em VPS."],
+    },
+    {
       company: "Soft Performance",
       role: "Desenvolvedor de Software",
-      period: "2025 — Atual",
+      period: "2025 — 2026",
       summary:
         "Atuação no desenvolvimento e manutenção de aplicações corporativas, com foco em evolução de funcionalidades, integração de dados, endpoints REST, sincronização de informações e colaboração com times de produto, QA e desenvolvimento.",
       highlights: [
