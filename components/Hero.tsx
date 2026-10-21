@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Mail, PhoneCall } from "lucide-react";
+import { ArrowRight, Download, Mail, PhoneCall } from "lucide-react";
 import { profile } from "@/data/profile";
 import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
@@ -12,6 +12,7 @@ export function Hero() {
     ? phoneDigits
     : `55${phoneDigits}`;
   const whatsappHref = `https://wa.me/${normalizedPhone}`;
+  const resumeHref = "/Curriculo-Danillo-Coelho-Full-Stack-Pleno-I.pdf";
 
 
   return (
@@ -91,6 +92,15 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-full bg-emerald-300 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-200"
               >
                 Ver projetos <ArrowRight size={17} />
+              </a>
+
+              <a
+                href={resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 px-5 py-3 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300 hover:bg-emerald-400/10"
+              >
+                Baixar currículo <Download size={16} />
               </a>
 
               <a
